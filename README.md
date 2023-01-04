@@ -4,7 +4,15 @@
 ### ToDo
 This Starter Code has already implemented the functionalities you implemented in the StarNotary (Version 2) exercise, and have comments in all the files you need to implement your tasks.
 
-
+### Project Submition
+# Truffle version and OpenZeppelin version used in the project.
+Truffle v5.6.7 (core: 5.6.7)
+OpenZeppelin
+# ERC-721 Token Name 
+Star Girl Chinwe
+# ERC-721 Token Symbol
+USD
+# Token Address on the Rinkeby Network
 
 ### Dependencies
 For this project, you will need to have:

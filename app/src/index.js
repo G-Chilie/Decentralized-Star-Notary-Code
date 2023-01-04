@@ -6,6 +6,21 @@ const App = {
   account: null,
   meta: null,
 
+  init: async function() {
+    // Load star name and symblo.
+    $.getJSON('./star.json', function(data) {
+      var starRow = $('#starRow');
+      var starTemplate = $('#starTemplate');
+
+      for (i = 0; i < data.length; i ++) {
+        starTemplate.find('.panel-title').text(data[i].name);
+        starTemplate.find('img').attr('src', data[i].picture);
+
+        starRow.append(starTemplate.html());
+      }
+    });
+  },
+
   start: async function() {
     const { web3 } = this;
 
