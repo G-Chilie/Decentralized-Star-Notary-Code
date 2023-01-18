@@ -9,14 +9,13 @@ contract StarNotary is ERC721 {
     // Star data
     struct Star {
         string name;
-        string symbol;
     }
 
     // Implement Task 1 Add a name and symbol properties
-    constructor() public {
-        name = "Star Girl Chinwe";
-        symbol = "USD";
-    }
+    
+     string public  name = "ChinweStars";
+     string public  symbol = "USD";
+    
     // name: Is a short name to your token
     // symbol: Is a short string like 'USD' -> 'American Dollar'
     
@@ -62,8 +61,7 @@ contract StarNotary is ERC721 {
     // Implement Task 1 lookUptokenIdToStarInfo
     function lookUptokenIdToStarInfo (uint _tokenId) public view returns (string memory) {
         //1. You should return the Star saved in tokenIdToStarInfo mapping
-            Star = tokenIdToStarInfo[_tokenId];
-            return Star; 
+        return tokenIdToStarInfo[_tokenId].name;
     }
 
     // Implement Task 1 Exchange Stars function
@@ -73,10 +71,13 @@ contract StarNotary is ERC721 {
         //3. Get the owner of the two tokens (ownerOf(_tokenId1), ownerOf(_tokenId2)
         //4. Use _transferFrom function to exchange the tokens.
 
-        uint256 Star1 = ownerOf(_tokenId1);
-        uint256 Star2 = ownerOf(_tokenId2); 
+        address star1Owner = ownerOf(_tokenId1);
+        address star2Owner = ownerOf(_tokenId2);
 
-        _transferFrom(from, Star1, to, Star2);
+        require(msg.sender == star1Owner || msg.sender == star2Owner, "You don't own any of these stars!");
+
+        _transferFrom(star1Owner, star2Owner, _tokenId1);
+        _transferFrom(star2Owner, star1Owner, _tokenId2);
     }
 
     // Implement Task 1 Transfer Stars
@@ -84,10 +85,10 @@ contract StarNotary is ERC721 {
         //1. Check if the sender is the ownerOf(_tokenId)
         //2. Use the transferFrom(from, to, tokenId); function to transfer the Star
 
-        Star = ownerOf(_tokenId);
-        require(_to1 != Star);
+        address starOwner = ownerOf(_tokenId);
+        require(msg.sender == starOwner, "You don't own this star!");
 
-        _transferFrom(from, _to1, _tokenId);
+        _transferFrom(msg.sender, _to1, _tokenId);
     }
 
 

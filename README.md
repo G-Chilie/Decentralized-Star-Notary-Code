@@ -7,13 +7,13 @@ This Starter Code has already implemented the functionalities you implemented in
 ### Project Submition
 # Truffle version and OpenZeppelin version used in the project.
 Truffle v5.6.7 (core: 5.6.7)
-OpenZeppelin
+OpenZeppelin 2.3.0
 # ERC-721 Token Name 
-Star Girl Chinwe
+ChinweStars
 # ERC-721 Token Symbol
 USD
 # Token Address on the Rinkeby Network
-
+Rinkeby Network Address: 
 ### Dependencies
 For this project, you will need to have:
 1. **Node and NPM** installed - NPM is distributed with [Node.js](https://www.npmjs.com/get-npm)
