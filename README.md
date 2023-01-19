@@ -13,7 +13,7 @@ ChinweStars
 # ERC-721 Token Symbol
 USD
 # Token Address on the Rinkeby Network
-Rinkeby Network Address: 
+Rinkeby Network Address: 0x1e8c03Ce57FE8B79d2E8BdCad56AD7A00dB806d2
 ### Dependencies
 For this project, you will need to have:
 1. **Node and NPM** installed - NPM is distributed with [Node.js](https://www.npmjs.com/get-npm)
